@@ -1,7 +1,11 @@
 package main
 
-import loadbalancer "loadbalancer/internal"
+import (
+	loadbalancer "loadbalancer/internal"
+	"os"
+)
 
 func main() {
-	loadbalancer.Start(":8080")
+	port := os.Args[1]
+	loadbalancer.Start(port)
 }
